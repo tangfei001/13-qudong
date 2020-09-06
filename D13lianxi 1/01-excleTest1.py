@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2020/9/6 10:36
+# @Author  : Aries
+# @Site    : 
+# @File    : 01-excleTest1.py
+# @Software: PyCharm
+'''
+数据驱动Excel文件的操作方法--读取文件
+涉及的库
+xlrd-----r
+xlwt-----w
+xlutils---文件内容的修改  (这个库需要安装)
+------------------------------------------
+思路:
+import xlrd
+import os
+
+01:写一个函数-使用os库进行目录拼接(获取文件的目录)
+02:打开文件
+03:具体到sheet或者name
+04:操作
+	001:查看多少行
+	002:获取到具体单元格的内容
+'''
+import xlrd
+import os
+
+def base_dir(fileName=None):
+	return os.path.join(os.path.dirname(__file__),fileName)
+#打开文件
+work=xlrd.open_workbook(base_dir('data.xls'))
+#定位到具体的sheet
+sheet=work.sheet_by_index(0)
+#查看有多少行
+print(sheet.nrows)
+#查看有多少列
+print(sheet.ncols)
+#查看具体的内容
+print(sheet.cell_value(12,2))

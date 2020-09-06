@@ -1,0 +1,22 @@
+建立连接的步骤:
+
+01:以管理员身份打开cmd
+
+02:开启mysql服务器: net start mysql
+
+03:打开Navicat连接工具,输入密码进行连接
+
+04:使用完毕:在cmd中关闭服务器: net stop mysql
+------------------------------------------------------
+常用的参考命令:
+①安装服务：mysqld --install
+②初始化：　mysqld --initialize --console
+③开启服务：net start mysql
+④关闭服务：net stop mysql
+⑤登录mysql：mysql -u root -p
+Enter PassWord：(密码)
+⑥修改密码：alter user 'root'@'localhost' identified by 'root';(by 接着的是密码)
+	    mysqladmin -u root -p password
+⑦标记删除mysql服务：sc delete mysql
+		
+	  
